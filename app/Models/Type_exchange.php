@@ -9,8 +9,12 @@ class Type_exchange extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'type_exchanges'
+     ];
+
     public function exchanges()
      {
-        return $this->hasMany(Exchangue::class);
+        return $this->hasMany(Product::class,'type_exchange_id');
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Mail\MailZloty;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
+Auth::routes();
 Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     
     return view('user.index');
@@ -39,3 +40,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/home', [UserController::class, 'index'])->name('home');
     
 });
+

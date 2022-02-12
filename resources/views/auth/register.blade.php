@@ -14,19 +14,14 @@
                                 <h3 class=" letraImagen">!No te has registrado!</h3>
                             </section>
                             <div class="textoicon">
-                                <div>
-                                    <i class="far fa-check-circle">
-                                    </i>
-                                    <p class="mensajeparrafo"> Registrate </p>
-                                </div>
-                                <div>
+                                  <div>
                                     <i class="far fa-check-circle">
                                     </i>
                                     <p class="mensajeparrafo"> Haz tus cambio o donaciones en menos de 5 min</p>
                                 </div>
                             </div>
                             <button type="submit" class="btn colorRegistro mt-3"><a
-                                    href="iniciar-sesion.php"
+                            href="{{ route('login') }}"
                                     style="text-decoration: none; color:white">
                                     inicia Sesion</a>
                             </button>
@@ -66,7 +61,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-7 ml-3">
                                     <label for="numero" class="colorLabel">N. Contacto</label>
-                                    <input type="text" class="form-control inputPeque" name="phone"
+                                    <input type="text"  minlength="10"  class="form-control inputPeque" name="phone"
                                     id="numerocel" placeholder="32333333232" required>
                                 </div>
                                 <!-- ciudad -->
@@ -98,13 +93,13 @@
                             <div class="form-row contenedorCompleto ml-3">
                                 <div class="form-group mt-3">
                                     <label for="password" class="colorLabel">Introduce una contraseña</label>
-                                    <input type="password" class="form-control inputPeque" id="password"
-                                    type="password" name="password" required autocomplete="new-password">
+                                    <input required minlength="8" type="password" class="form-control inputPeque" id="password"
+                                    type="password" name="password"  autocomplete="new-password">
                                 </div>
                                 <div class="form-group mt-3 ml-4">
                                     <label for="password" class="colorLabel">Confirmar contraseña</label>
                                     <input type="password" class="form-control inputPeque" id="password"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                    name="password_confirmation" required minlength="8" autocomplete="new-password">
                                 </div>
                             </div>
                             
@@ -126,7 +121,7 @@
                         @endif
                             <div class="flex items-center justify-end mt-4">
                                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                                    {{ __('Already registered?') }}
+                                    {{ __('¿Ya estás registrado?') }}
                                 </a>
                 
                                 <x-jet-button class="btn colorBoton ml-5 mt-3">

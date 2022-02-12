@@ -27,8 +27,19 @@
                 @csrf
                 <!-- email -->
                 <div class="form-group mt-4">
-                    <label for="Email" class="colorLabel" value="{{ __('Email') }}">Email</label>
-                    <input type="email" class="form-control inputPeque" id="correoinput" name="email" :value="old('email')" required autofocus>
+
+                <label for="Email" class="colorLabel" value="{{ __('Email') }}">Email</label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>Tu contraseña o email están mal, ¡por favor verifica!</strong>
+                        </span>
+                    @enderror
+
+                
+                   
+                 
                 </div>
                 <!-- contraseña -->
                 <div class="form-group mt-3">
@@ -45,7 +56,7 @@
                                 @if (Route::has('password.request'))
                                     <i class="fas fa-key"></i>
                                     <a class="olvidoContrase" href="{{ route('password.request') }}">
-                                        {{ __('Forgot your password?') }}
+                                        {{ __('¿Olvidaste tu contraseña?') }}
                                     </a>
                                 @endif
                             </div>

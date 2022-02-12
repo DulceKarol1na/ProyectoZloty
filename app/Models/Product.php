@@ -15,6 +15,7 @@ class Product extends Model
         'image',
         'stocks',
         'user_id',
+        'type_exchange_id',
         'category_id',
         'state_id'
     ];
@@ -30,7 +31,10 @@ class Product extends Model
      {
         return $this->belongsTo(State::class,'state_id');
     }
-    
+    public function exchanges()
+     {
+        return $this->belongsTo(State::class,'type_exchange_id');
+    }
     
 
 }

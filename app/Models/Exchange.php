@@ -32,7 +32,7 @@ class Exchange extends Model
     }
     public function typeExchange()
      {
-        return $this->belongsTo(Type_exchangue::class,'type_exchangue_id');
+        return $this->belongsTo(Type_exchangue::class,'type_exchange_id');
     }
     public function exchange_state()
      {

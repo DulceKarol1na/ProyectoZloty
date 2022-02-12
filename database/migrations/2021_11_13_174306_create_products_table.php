@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('stocks');        
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('type_exchange_id');
+            $table->foreign('type_exchange_id')->references('id')->on('type_exchanges');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('state_id');
